@@ -57,5 +57,5 @@ http:localhost:3000/deals
 http:localhost:3000/insert/deals
 ```
 
-## This is the message when POST occur ok:
+## This is the message when POST occurs ok:
 ![message](docs/post-message.png)
