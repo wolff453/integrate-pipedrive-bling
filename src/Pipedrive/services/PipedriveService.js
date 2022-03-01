@@ -7,15 +7,16 @@ export const PipedriveService = ({ request, config, xml, BlingSchema, pipedriveR
     const parseJsonToXml = (objectDeals) => {
         return xml.parse(objectDeals);
     }
-
+    
     const insertDealsInBling = async (deals) => {
-        deals.forEach(async item => {
-            const products = await request.get(`https://teste121.pipedrive.com/api/v1/deals/${item.id}/products/?api_token=${config.pipedrive.apiToken}`)
-            const name = await request.get(`https://teste121.pipedrive.com/api/v1/products/${products.data.data[0].product_id}?api_token=${config.pipedrive.apiToken}`)
-            const schema = BlingSchema(item, name.data.data.name)
+        deals.forEach(async deal => {
+            const products = await request.get(`${config.pipedrive.baseUrl2}${deal.id}/products/?api_token=${config.pipedrive.apiToken}`)
+            const name = await request.get(`${config.pipedrive.baseProductsUrl}${products.data.data[0].product_id}?api_token=${config.pipedrive.apiToken}`)
+            const schema = BlingSchema(deal, name.data.data.name)
             const parse = parseJsonToXml(schema)
             await request.post(`${config.bling.baseUrl}${config.bling.apiToken}&xml=${parse}`)
             schema.created_at = new Date()
+            schema.total = deal.value
             await pipedriveRepository.insert(config.mongo.db, config.mongo.collection, [schema])
         })
     }

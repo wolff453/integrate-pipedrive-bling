@@ -5,7 +5,9 @@ dotenv.config()
 export default {
     pipedrive: {
         apiToken: process.env.PIPEDRIVE_API_TOKEN,
-        baseUrl: process.env.PIPEDRIVE_BASE_API_URL
+        baseUrl: process.env.PIPEDRIVE_BASE_API_URL,
+        baseUrl2: process.env.PIPEDRIVE_BASE_API_URL2,
+        baseProductsUrl: process.env.PIPEDRIVE_BASE_API_PRODUCTS_URL
     },
     bling: {
         apiToken: process.env.BLING_API_TOKEN,
