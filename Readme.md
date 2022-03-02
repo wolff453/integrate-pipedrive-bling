@@ -1,8 +1,18 @@
 # Integration of Pipedrive with Bling
 
+## Points to implement:
+
+#### - 100% Coverage
+#### - Insert credentials in AWS SSM Parameter store
+#### - Create a Dockerfile
+#### - Create a Jenkins CI/CD to build the application
+#### - Add SonarScanner to detect all code smells inside of code
+
 ### This project consists to pass Pipedrive deals to Bling
 
 ## To run the project, use this environment variables:
+## To make it easier, I left the connection string public along with the collection and the database, just put your credentials
+
 
 ```shell
 PIPEDRIVE_API_TOKEN=your_pipedrive_token
