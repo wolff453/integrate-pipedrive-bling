@@ -8,8 +8,8 @@ import { BlingSchema } from '../../../../schema/BlingSchema.js'
 import xml from '../../../../providers/XmlProvider/index.js'
 
 export const PostDealsPipedriveFactory = () => {
-    const pipedriveRepository = PipedriveRepository({ mongo })
-    const pipedriveService = PipedriveService({ request, config, xml, BlingSchema, pipedriveRepository })
-    const pipedriveController = PostController({ pipedriveService })
-    return pipedriveController.handle
+  const pipedriveRepository = PipedriveRepository({ mongo })
+  const pipedriveService = PipedriveService({ request, config, xml, BlingSchema, pipedriveRepository })
+  const pipedriveController = PostController({ pipedriveService })
+  return pipedriveController.handle
 }

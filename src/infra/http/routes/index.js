@@ -1,4 +1,5 @@
 import express from 'express'
+import config from '../../../../config/index.js'
 import pipedrive from './routes.js'
 
 
@@ -7,4 +8,4 @@ const app = express()
 
 app.use(pipedrive)
 
-app.listen(3000, () => console.log('Rodando na porta 3000'))
+app.listen(config.infra.port, () => console.log('Rodando na porta 3000'))
