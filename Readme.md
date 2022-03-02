@@ -7,6 +7,7 @@
 #### - Create a Dockerfile
 #### - Create a Jenkins CI/CD to build the application
 #### - Add SonarScanner to detect all code smells inside of code
+#### - Create a pagination in GET route
 
 ### This project consists to pass Pipedrive deals to Bling
 
