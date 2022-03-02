@@ -19,6 +19,6 @@ export default {
     connectionString: process.env.MONGO_CONNECTION_STRING,
   },
   infra: {
-    port: process.env.PORT,
+    port: process.env.PORT || 3000,
   },
 }
