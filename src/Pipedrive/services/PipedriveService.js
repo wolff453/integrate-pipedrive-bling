@@ -17,6 +17,7 @@ export const PipedriveService = ({ request, config, xml, BlingSchema, pipedriveR
       await request.post(`${config.bling.baseUrl}${config.bling.apiToken}&xml=${parse}`)
       schema.created_at = new Date()
       schema.total = deal.value
+      schema.cliente.empresa = deal.title
       await pipedriveRepository.insert(config.mongo.db, config.mongo.collection, [schema])
     })
   }
