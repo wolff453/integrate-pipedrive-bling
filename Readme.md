@@ -13,6 +13,8 @@
 
 ## To run the project, use this environment variables:
 ## To make it easier, I left the connection string public along with the collection and the database, just put your credentials
+#### ```Never leave the connection string public```
+
 
 
 ```shell
@@ -25,6 +27,7 @@ BLING_BASE_API_URL=https://bling.com.br/Api/v2/pedido/json/?apikey=
 MONGO_CONNECTION_STRING=mongodb+srv://linkapi:linkapi@cluster0.hzbvf.mongodb.net/test
 MONGO_COLLECTION_NAME=deals
 MONGO_DATABASE_NAME=linkapi
+PORT=3001
 ```
 
 # To run the project, follow the steps bellow:
