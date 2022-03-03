@@ -5,7 +5,7 @@ export const PostController = ({ pipedriveService }) => ({
       await pipedriveService.insertDealsInBling(deals)
       return response.status(200).send({ message: 'Data entered succesfully' })
     } catch (error) {
-      return response.status(error.response.status || 500).send({ message: error.message })
+      return response.status(500).send({ message: error.message })
 
     }
   },
