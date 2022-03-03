@@ -1,6 +1,6 @@
 export const PipedriveService = ({ request, config, xml, BlingSchema, pipedriveRepository }) => {
   const getAllWonStatus = async () => {
-    const get = await request.get(`${config.pipedrive.baseUrl}${config.pipedrive.apiToken}`);
+    const get = await request.get(`${config.pipedrive.baseUrl}${config.pipedrive.apiToken}&status=won`);
     return get.data.data;
   }
 
